@@ -26,8 +26,11 @@ function initLoading() {
 function initNavbar() {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
+  const alwaysScrolled = navbar.classList.contains('scrolled');
   const onScroll = () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    if (!alwaysScrolled) {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -279,7 +282,8 @@ function initCategoryFilter() {
       const cat = btn.dataset.category;
 
       cards.forEach(card => {
-        if (cat === 'all' || card.dataset.category === cat) {
+        const isHidden = card.dataset.hidden === 'true';
+        if ((cat === 'all' || card.dataset.category === cat) && !isHidden) {
           card.style.display = '';
           card.style.animation = 'fadeInUp 0.4s ease';
         } else {
@@ -320,7 +324,9 @@ function initLoadMore() {
 document.addEventListener('click', (e) => {
   const anchor = e.target.closest('a[href^="#"]');
   if (!anchor) return;
-  const target = document.querySelector(anchor.getAttribute('href'));
+  const href = anchor.getAttribute('href');
+  if (href === '#' || href.length < 2) return;
+  const target = document.querySelector(href);
   if (target) {
     e.preventDefault();
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
