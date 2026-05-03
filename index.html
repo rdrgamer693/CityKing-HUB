@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityKing Hub — Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <div class="loader"></div>
+    <p>Loading CityKing Hub</p>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <i class="fas fa-crown"></i>
+        <span>CityKing Hub</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="minecraft.html">Minecraft</a>
+        <a href="news.html">News</a>
+        <a href="security.html">Security</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+        <button class="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <canvas id="particles-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-bolt"></i>
+        <span>The Ultimate Gaming Platform</span>
+      </div>
+      <h1 class="hero-title">
+        Welcome to<br />
+        <span class="gradient-text">CityKing Hub</span>
+      </h1>
+      <p class="hero-subtitle">
+        Join thousands of gamers in an epic adventure. Play, compete, and connect on the most immersive gaming platform ever built.
+      </p>
+      <div class="hero-buttons">
+        <a href="minecraft.html" class="btn btn-primary btn-lg">
+          <i class="fas fa-gamepad"></i> Play Now
+        </a>
+        <a href="login.html" class="btn btn-secondary btn-lg">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </a>
+        <a href="register.html" class="btn btn-outline btn-lg">
+          <i class="fas fa-user-plus"></i> Register
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value">5,200+</div>
+          <div class="hero-stat-label">Players</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">99.9%</div>
+          <div class="hero-stat-label">Uptime</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">24/7</div>
+          <div class="hero-stat-label">Support</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">50+</div>
+          <div class="hero-stat-label">Game Modes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="features">
+    <div class="section-header reveal">
+      <span class="section-badge"><i class="fas fa-star"></i> Features</span>
+      <h2 class="section-title">Why Choose <span class="gradient-text">CityKing Hub</span></h2>
+      <p class="section-subtitle">Experience gaming like never before with our cutting-edge features and community-driven platform.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card glass-card reveal">
+        <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+        <h3>Anti-Cheat Protection</h3>
+        <p>Advanced anti-cheat systems ensure fair play for every player across all game modes.</p>
+      </div>
+      <div class="feature-card glass-card reveal">
+        <div class="feature-icon"><i class="fas fa-server"></i></div>
+        <h3>Low Latency Servers</h3>
+        <p>Premium servers with sub-10ms latency for the smoothest gaming experience possible.</p>
+      </div>
+      <div class="feature-card glass-card reveal">
+        <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+        <h3>Ranked Competitions</h3>
+        <p>Compete in seasonal ranked modes and climb the leaderboards to earn exclusive rewards.</p>
+      </div>
+      <div class="feature-card glass-card reveal">
+        <div class="feature-icon"><i class="fas fa-users"></i></div>
+        <h3>Active Community</h3>
+        <p>Join a vibrant community of thousands of players. Make friends, form teams, and more.</p>
+      </div>
+      <div class="feature-card glass-card reveal">
+        <div class="feature-icon"><i class="fas fa-code"></i></div>
+        <h3>Custom Plugins</h3>
+        <p>Enjoy unique gameplay with our custom-built plugins and game mechanics exclusive to CityKing.</p>
+      </div>
+      <div class="feature-card glass-card reveal">
+        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+        <h3>24/7 Support</h3>
+        <p>Our dedicated support team is available around the clock to help with any issues.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Server Status Section -->
+  <section class="section" id="status">
+    <div class="section-header reveal">
+      <span class="section-badge"><i class="fas fa-signal"></i> Live Status</span>
+      <h2 class="section-title">Server <span class="gradient-text">Status</span></h2>
+      <p class="section-subtitle">Real-time status of all CityKing services and game servers.</p>
+    </div>
+    <div class="status-grid">
+      <div class="status-card glass-card reveal">
+        <div class="status-indicator online"></div>
+        <div class="status-info">
+          <h4>Minecraft Survival</h4>
+          <p>142 players online • 1.20.4</p>
+        </div>
+      </div>
+      <div class="status-card glass-card reveal">
+        <div class="status-indicator online"></div>
+        <div class="status-info">
+          <h4>Minecraft SkyBlock</h4>
+          <p>89 players online • 1.20.4</p>
+        </div>
+      </div>
+      <div class="status-card glass-card reveal">
+        <div class="status-indicator online"></div>
+        <div class="status-info">
+          <h4>Minecraft PvP Arena</h4>
+          <p>67 players online • 1.20.4</p>
+        </div>
+      </div>
+      <div class="status-card glass-card reveal">
+        <div class="status-indicator online"></div>
+        <div class="status-info">
+          <h4>Discord Bot</h4>
+          <p>Online • Serving 3,400 members</p>
+        </div>
+      </div>
+      <div class="status-card glass-card reveal">
+        <div class="status-indicator online"></div>
+        <div class="status-info">
+          <h4>Web Services</h4>
+          <p>All systems operational</p>
+        </div>
+      </div>
+      <div class="status-card glass-card reveal">
+        <div class="status-indicator offline"></div>
+        <div class="status-info">
+          <h4>Minecraft Creative</h4>
+          <p>Maintenance — back soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Section -->
+  <section class="section" id="community">
+    <div class="section-header reveal">
+      <span class="section-badge"><i class="fas fa-heart"></i> Community</span>
+      <h2 class="section-title">Join Our <span class="gradient-text">Community</span></h2>
+      <p class="section-subtitle">Connect with fellow gamers across multiple platforms.</p>
+    </div>
+    <div class="community-grid">
+      <div class="community-card glass-card reveal">
+        <div class="card-icon discord"><i class="fab fa-discord"></i></div>
+        <div>
+          <h4>Discord Server</h4>
+          <p>Chat, voice, and hang out with 3,400+ members in our official Discord server.</p>
+          <a href="#" class="btn btn-sm btn-secondary"><i class="fab fa-discord"></i> Join Discord</a>
+        </div>
+      </div>
+      <div class="community-card glass-card reveal">
+        <div class="card-icon youtube"><i class="fab fa-youtube"></i></div>
+        <div>
+          <h4>YouTube Channel</h4>
+          <p>Watch gameplay videos, tutorials, and server highlights on our YouTube channel.</p>
+          <a href="#" class="btn btn-sm btn-secondary"><i class="fab fa-youtube"></i> Subscribe</a>
+        </div>
+      </div>
+      <div class="community-card glass-card reveal">
+        <div class="card-icon twitter"><i class="fab fa-twitter"></i></div>
+        <div>
+          <h4>Twitter / X</h4>
+          <p>Stay updated with the latest news, events, and announcements.</p>
+          <a href="#" class="btn btn-sm btn-secondary"><i class="fab fa-twitter"></i> Follow</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <i class="fas fa-crown"></i>
+          <span>CityKing Hub</span>
+        </a>
+        <p>The ultimate gaming platform for Minecraft enthusiasts. Play, compete, and connect.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="minecraft.html">Minecraft</a>
+        <a href="news.html">News</a>
+        <a href="security.html">Security</a>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="security.html">Security</a>
+        <a href="#">Profile</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Bug Reports</a>
+        <a href="#">Status Page</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 CityKing Hub. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

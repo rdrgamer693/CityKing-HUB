@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityKing Hub — Security</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <div class="loader"></div>
+    <p>Loading CityKing Hub</p>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <i class="fas fa-crown"></i>
+        <span>CityKing Hub</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="minecraft.html">Minecraft</a>
+        <a href="news.html">News</a>
+        <a href="security.html" class="active">Security</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-sun"></i>
+        </button>
+        <button class="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Security Dashboard -->
+  <section class="dashboard-page">
+    <div class="dashboard-header reveal">
+      <span class="section-badge"><i class="fas fa-shield-halved"></i> Security Center</span>
+      <h1>Account <span class="gradient-text">Security</span></h1>
+      <p>Manage your account security settings and monitor activity.</p>
+    </div>
+
+    <div class="dashboard-grid">
+
+      <!-- Account Info -->
+      <div class="dash-card glass-card reveal">
+        <div class="dash-card-header">
+          <i class="fas fa-user-circle"></i>
+          <h3>Account Information</h3>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Username</span>
+          <span class="info-value">KingPlayer99</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Email</span>
+          <span class="info-value">king***@email.com</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Account Created</span>
+          <span class="info-value">Jan 15, 2024</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Account Status</span>
+          <span class="info-value" style="color: var(--neon-green);">
+            <i class="fas fa-check-circle"></i> Verified
+          </span>
+        </div>
+      </div>
+
+      <!-- Login Activity -->
+      <div class="dash-card glass-card reveal">
+        <div class="dash-card-header">
+          <i class="fas fa-clock-rotate-left"></i>
+          <h3>Login Activity</h3>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Last Login</span>
+          <span class="info-value">Today, 3:42 PM</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">IP Address</span>
+          <span class="info-value">192.168.1.***</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Device</span>
+          <span class="info-value">Chrome on Windows</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Location</span>
+          <span class="info-value">New York, US</span>
+        </div>
+      </div>
+
+      <!-- Two-Factor Authentication -->
+      <div class="dash-card glass-card reveal">
+        <div class="dash-card-header">
+          <i class="fas fa-mobile-screen"></i>
+          <h3>Two-Factor Authentication</h3>
+        </div>
+        <div class="tfa-toggle">
+          <div class="tfa-toggle-info">
+            <i class="fas fa-shield-halved"></i>
+            <div>
+              <h4>Enable 2FA</h4>
+              <p>Add an extra layer of security to your account</p>
+            </div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="tfa-switch" />
+            <span class="switch-slider"></span>
+          </label>
+        </div>
+        <div id="tfa-setup" style="display:none;">
+          <p style="color:var(--text-secondary); font-size:0.85rem; margin-bottom:1rem;">
+            Scan the QR code with your authenticator app (Google Authenticator, Authy, etc.)
+          </p>
+          <div style="width:160px;height:160px;background:var(--glass);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;border:1px solid var(--glass-border);">
+            <i class="fas fa-qrcode" style="font-size:4rem;color:var(--text-muted);"></i>
+          </div>
+          <div class="form-group" style="margin-top:1rem;">
+            <label for="tfa-code">Enter 6-digit code</label>
+            <div class="input-wrapper">
+              <input type="text" id="tfa-code" placeholder="000000" maxlength="6" style="text-align:center;letter-spacing:8px;font-size:1.2rem;" />
+              <i class="fas fa-hashtag"></i>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="showToast('2FA enabled successfully!', 'success')" style="width:100%;">
+            <i class="fas fa-check"></i> Verify & Enable
+          </button>
+        </div>
+      </div>
+
+      <!-- Change Password -->
+      <div class="dash-card glass-card reveal">
+        <div class="dash-card-header">
+          <i class="fas fa-key"></i>
+          <h3>Change Password</h3>
+        </div>
+        <form id="changePasswordForm" novalidate>
+          <div class="form-group">
+            <label for="currentPass">Current Password</label>
+            <div class="input-wrapper">
+              <input type="password" id="currentPass" placeholder="Enter current password" />
+              <i class="fas fa-lock"></i>
+              <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="newPass">New Password</label>
+            <div class="input-wrapper">
+              <input type="password" id="newPass" placeholder="Enter new password" />
+              <i class="fas fa-key"></i>
+              <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="confirmNewPass">Confirm New Password</label>
+            <div class="input-wrapper">
+              <input type="password" id="confirmNewPass" placeholder="Confirm new password" />
+              <i class="fas fa-lock"></i>
+              <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-sm" style="width:100%;">
+            <i class="fas fa-save"></i> Update Password
+          </button>
+        </form>
+      </div>
+
+      <!-- Security Alerts -->
+      <div class="dash-card glass-card full-width reveal">
+        <div class="dash-card-header">
+          <i class="fas fa-bell"></i>
+          <h3>Security Alerts</h3>
+        </div>
+        <div class="alert-item">
+          <div class="alert-icon success">
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="alert-content">
+            <h4>Password Changed Successfully</h4>
+            <p>Your password was updated on April 28, 2024 at 2:15 PM</p>
+          </div>
+        </div>
+        <div class="alert-item">
+          <div class="alert-icon warning">
+            <i class="fas fa-exclamation"></i>
+          </div>
+          <div class="alert-content">
+            <h4>New Login Detected</h4>
+            <p>A new login was detected from Chrome on Windows — April 27, 2024 at 9:30 AM</p>
+          </div>
+        </div>
+        <div class="alert-item">
+          <div class="alert-icon danger">
+            <i class="fas fa-triangle-exclamation"></i>
+          </div>
+          <div class="alert-content">
+            <h4>Failed Login Attempt</h4>
+            <p>Someone tried to access your account from an unknown device — April 25, 2024 at 11:02 PM</p>
+          </div>
+        </div>
+        <div class="alert-item">
+          <div class="alert-icon success">
+            <i class="fas fa-shield-halved"></i>
+          </div>
+          <div class="alert-content">
+            <h4>2FA Enabled</h4>
+            <p>Two-factor authentication was enabled on April 20, 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2024 CityKing Hub. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initPasswordToggles();
+
+      const tfaSwitch = document.getElementById('tfa-switch');
+      const tfaSetup = document.getElementById('tfa-setup');
+      tfaSwitch.addEventListener('change', () => {
+        tfaSetup.style.display = tfaSwitch.checked ? 'block' : 'none';
+        if (!tfaSwitch.checked) showToast('2FA disabled', 'info');
+      });
+
+      const form = document.getElementById('changePasswordForm');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const current = document.getElementById('currentPass');
+        const newP = document.getElementById('newPass');
+        const confirm = document.getElementById('confirmNewPass');
+        let valid = true;
+
+        [current, newP, confirm].forEach(clearValidation);
+
+        if (!current.value) {
+          showValidation(current, 'Current password is required', true);
+          valid = false;
+        }
+        if (!newP.value) {
+          showValidation(newP, 'New password is required', true);
+          valid = false;
+        } else if (newP.value.length < 8) {
+          showValidation(newP, 'Must be at least 8 characters', true);
+          valid = false;
+        }
+        if (newP.value && confirm.value !== newP.value) {
+          showValidation(confirm, 'Passwords do not match', true);
+          valid = false;
+        }
+
+        if (valid) {
+          showToast('Password updated successfully!', 'success');
+          form.reset();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
